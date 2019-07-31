@@ -1,5 +1,4 @@
 from iputils import *
-import ipaddress
 
 #grab source/dest inputs
 ipsource = input('Source? ')

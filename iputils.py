@@ -1,12 +1,12 @@
 import ipaddress
 
 #zones
-zone1 = ['192.168.0.0/24','192.168.1.0/24','172.16.0.0/24','172.16.1.0/24']
-zone2 = ['192.168.2.0/24','192.168.3.0/24','172.16.2.0/24','172.16.3.0/24']
+zone1 = []
+zone2 = []
 
 #environments
-prod = ['192.168.0.0/23','192.168.2.0/23']
-nonprod = ['172.16.0.0/23','172.16.2.0/23']
+prod = []
+nonprod = []
 
 #takes a string as an input, runs IP address query to map it to a variable (one of the zones above)
 def zonelookup(ip):

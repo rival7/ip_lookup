@@ -1,4 +1,5 @@
 import ipaddress
+import csv
 
 #zones
 zone1 = []
@@ -7,6 +8,20 @@ zone2 = []
 #environments
 prod = []
 nonprod = []
+
+#create variables from a csv
+result = {}
+
+with open('subnets.csv','r') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    next(csvreader, None)
+    for row in csvreader:
+        if row[1] in result:
+            result[row[1]].append(row[0])
+        else:
+            result[row[1]] = [row[0]]    
+
+print(result)
 
 #takes a string as an input, runs IP address query to map it to a variable (one of the zones above)
 def zonelookup(ip):

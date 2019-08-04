@@ -2,7 +2,8 @@ from iputils import *
 import argparse
 
 parser = argparse.ArgumentParser(description='lookup source and destination against subnet lists')
-parser.add_argument('-csv',action='store',help='Specify csv file to look ip addresses up against')
+requiredNamed = parser.add_argument_group('required named arguments')
+requiredNamed.add_argument('-csv',action='store',help='Specify csv file to look ip addresses up against',required=True)
 parser.add_argument('-source',action='store',help='Specify source IP to look up')
 parser.add_argument('-dest',action='store',help='Specify destination IP to look up')
 args=parser.parse_args()
